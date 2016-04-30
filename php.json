@@ -1,0 +1,24 @@
+{
+    "version": "7.0.6",
+    "architecture": {
+    	"64bit": {
+	    "url": [
+		"http://windows.php.net/downloads/releases/php-7.0.6-Win32-VC14-x64.zip",
+	    	"https://raw.githubusercontent.com/madbub/scoop-php/master/64-bit/vcruntime140.dll"
+	    ],
+	    "hash": "sha1:607e510e60903ea58e2194fb2a87a07d3744cdca"
+	}
+    },
+    "bin": "php.exe",
+    "post_install": "
+#Copy PHP configuration file to expected location
+cp \"$dir\\php.ini-production\" \"$dir\\php.ini\"
+
+#Enable extensions to be found in installation-relative folder (the default is to search C:/php)
+(gc \"$dir\\php.ini\") | % { $_ -replace '; extension_dir = \"ext\"', 'extension_dir = \"ext\"' } | sc \"$dir\\php.ini\"
+",
+    "checkver" {
+    	"url": "http://windows.php.net/download/",
+	"re": "<h3 id=\"php-7.0\".*?>.*?\\(([0-9\\.]+)\\)</h3>"
+    }
+}
