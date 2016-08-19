@@ -5,11 +5,11 @@
     "architecture": {
         "64bit": {
             "url": [
-                "http://windows.php.net/downloads/qa/php-7.1.0beta3-Win32-VC14-x64.zip",
+                "http://windows.php.net/downloads/releases/php-7.0.10-Win32-VC14-x64.zip",
                 "https://raw.githubusercontent.com/madbub/scoop-php/master/64-bit/vcruntime140.dll"
             ],
             "hash": [
-                "sha1:e7148865e6f2bd8241a87c571d66730a1fc0cad2"
+                "sha1:fdf2b1350a656b897f75e9bc82da4f9b1c02ba35"
             ]
         }
     },
